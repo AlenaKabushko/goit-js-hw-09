@@ -1,8 +1,6 @@
 const startButtonRef = document.querySelector("button[data-start]")
 const stopButtonRef = document.querySelector("button[data-stop]")
 const bodyRef = document.querySelector("body")
-console.log(startButtonRef)
-console.log(stopButtonRef)
 
 let intervalID = null;
 stopButtonRef.disabled = true;
@@ -13,7 +11,6 @@ function getRandomHexColor() {
 
 function onStartButton(){
     intervalID = setInterval(() => {
-        console.log("interval work +++");
         bodyRef.style.backgroundColor = getRandomHexColor();
         startButtonRef.disabled = true;
         stopButtonRef.disabled = false;
@@ -22,7 +19,6 @@ function onStartButton(){
 
 function onStopButton() {
     clearInterval(intervalID);
-    console.log("interval DONT work ---");
     startButtonRef.disabled = false;
     stopButtonRef.disabled = true;
 }
