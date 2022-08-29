@@ -16,6 +16,15 @@ const refs = {
 let intervalID = null;
 refs.buttonStartRef.disabled = true;
 
+refs.buttonStartRef.setAttribute("style", 
+"display: block; padding: 20px; width: 200px; font-size: 20px; background-color: #ffd700; border: none; margin: 0 auto 15px auto;")
+refs.inputRef.setAttribute("style", 
+"display: block;  padding: 20px 15px; text-align: center; font-size: 20px; background-color: #0057b8; width: 200px; margin: 0 auto; border: none;")
+refs.timerRef.setAttribute("style", 
+"display: flex; flex-direction: row; align-items: center; justify-content: center;")
+refs.fieldsRef.forEach((field) => field.setAttribute("style", 
+"display: flex; flex-direction: column; align-items: center;  padding: 5px 15px; font-size: 36px;"))
+
 function convertMs(ms) {
     const second = 1000;
     const minute = second * 60;
@@ -76,14 +85,7 @@ const options = {
     },
 };
 
-refs.buttonStartRef.setAttribute("style", 
-"display: block; padding: 20px; width: 200px; font-size: 20px; background-color: #ffd700; border: none; margin: 0 auto 15px auto;")
-refs.inputRef.setAttribute("style", 
-"display: block;  padding: 20px 15px; text-align: center; font-size: 20px; background-color: #0057b8; width: 200px; margin: 0 auto; border: none;")
-refs.timerRef.setAttribute("style", 
-"display: flex; flex-direction: row; align-items: center; justify-content: center;")
-refs.fieldsRef.forEach((field) => field.setAttribute("style", 
-"display: flex; flex-direction: column; align-items: center;  padding: 5px 15px; font-size: 36px;"))
+
 
 flatpickr("#datetime-picker", options);
 
